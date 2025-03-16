@@ -1,0 +1,360 @@
+<!--SVD JS CALCULATOR BETA TESTING VERSION INCLUDES DEVELOPMENT AND BUGS TESTING SAMPLES-->
+<!--BETA VERSION 4.3.55-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>JS CALCULATOR BY SOURAV DEY - 4.3.55 (BETA)</title>
+        <style>
+
+            body
+             {
+              font-family: Arial, sans-serif;
+              animation: fadeIn 2s ease-in;
+            }
+        
+            @keyframes fadeIn
+             {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+        
+            h3#welcomeMessage {
+              color: #330066;
+              font-size: 24px;
+              animation: slideIn 1.5s ease-in-out;
+            }
+        
+            @keyframes slideIn {
+              from { transform: translateY(-30px); opacity: 0; }
+              to { transform: translateY(0); opacity: 1; }
+            }
+        
+            table 
+            {
+              border-radius: 10px;
+              overflow: hidden;
+              animation: growTable 1.5s ease-in-out;
+            }
+        
+            @keyframes growTable
+             {
+              0% { transform: scale(0.8) rotateX(60deg); opacity: 0; }
+              50% { transform: scale(1.05) rotateX(0deg); opacity: 0.8; }
+              100% { transform: scale(1) rotateX(0deg); opacity: 1; }
+            }
+        
+            button 
+            {
+              background: linear-gradient(45deg, #867b00, #05c444);
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              border-radius: 10px;
+              font-size: 16px;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        
+            button:hover 
+            {
+              transform: translateY(-2px) scale(1.05);
+              box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            }
+        
+            input[type="text"] 
+            {
+              padding: 10px 15px;
+              border-radius: 8px;
+              border: 2px solid #330066;
+              font-size: 16px;
+              background-color: #ffffffcc;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+              transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            input[type="text"]:focus {
+              border-color: #660099;
+              box-shadow: 0 0 10px #660099aa;
+              outline: none;
+            }
+        
+            .social-icons img {
+              transition: transform 0.3s ease;
+            }
+        
+            .social-icons img:hover {
+              transform: scale(1.2);
+            }
+          </style>
+    </head>
+
+    
+    <body bgcolor="#CCFFCC" align="center" background="https://c4.wallpaperflare.com/wallpaper/228/681/204/abstract-bright-light-plain-wallpaper-preview.jpg">
+        <div style="position: absolute; top: 20px; right: 20px;">
+            <a href="https://3fjw37pl-5500.inc1.devtunnels.ms/LOGIN_SVD_SYS034/">
+                <button style="padding: 10px 18px; font-size: 16px; font-weight: bold; background-color: #330066; color: white; border: none; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); cursor: pointer; transition: 0.3s;">
+                        Login / Signup
+                </button>
+            </a>
+        </div>
+        <br><br><br>
+
+        <p><b>HELLO :)</b></p>
+        <input type="text" id="username" placeholder="Enter your name"> <!--ACCEPTING NAME IN A TEXT BOX-->
+        <button onclick="welcomeUser()">START</button>
+    
+        <h3 id="welcomeMessage"></h3> <!--SHOWING THE TEXT HERE PATH ID IS "WELCOMEMESSAGE WHICH IS USED BY A JS FUNCTION TO SHOW THE NAME"-->
+
+        <br><br><br>
+<!--TABLE STARTS HERE-->
+        <table border="15" align="center" width="90%" bordercolor="#003333" cellspacing="10">
+            <th colspan="4">
+                <font size="6" color="#330066">
+                SVDInc JAVASCRIPT-CALCULATOR <!--TABLE HEADING-->
+            </font>
+            </th>
+
+
+            <tr align="center">
+                <td colspan="2" valign="top" height="50">
+                    <!-- Addition Image -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Addition Icon" width="70" height="70"><br>
+            
+                    <!-- ADDITION BUTTON -->
+                    <button onclick="addsvdjs()">ADDITION</button>
+                    <br><br>
+                    <h2 id="res"></h2>
+                </td>
+            
+                <td colspan="2">
+                    <!-- Subtraction Image -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/992/992660.png" alt="Subtraction Icon" width="70" height="70"><br>
+            
+                    <!-- SUBTRACTION BUTTON -->
+                    <button onclick="subsvdjs()">SUBTRACTION</button>
+                    <br><br>
+                    <h2 id="res2"></h2>
+                </td>
+            </tr>
+            
+            <tr align="center">
+                <td colspan="2">
+                    <!-- Multiplication Image -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/992/992678.png" alt="Multiplication Icon" width="70" height="70"><br>
+            
+                    <!-- MULTIPLICATION BUTTON -->
+                    <button onclick="mulsvdjs()">MULTIPLICATION</button>
+                    <br><br>
+                    <h2 id="res3"></h2>
+                </td>
+            
+                <td colspan="2">
+                    <!-- Division Image -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Division Icon" width="70" height="70"><br>
+            
+                    <!-- DIVISION BUTTON -->
+                    <button onclick="divsvdjs()">DIVISION</button>
+                    <br><br>
+                    <h2 id="res4"></h2>
+                </td>
+            </tr>
+
+             <!--SOCIAL MEDIA FOLLOW PAGE HERE-->
+             <tr>
+              <td colspan="4"><u>Follow Me:</u></td>
+          </tr>
+            <tr>
+            <td colspan="1" class="social-icons"><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="25" height="25"><br>
+                <button><a href="https://www.facebook.com/srvsvd">Facebook</a></button>
+                <br><br>
+                <h2 id="res4"></h2>
+            </td>
+
+            <td colspan="1" class="social-icons"><br>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="25" height="25">
+                       <br>
+                <button><a href="https://www.instagram.com/srvsvd">Instagram</a></button>
+                <br><br>
+                <h2 id="res4"></h2>
+            </td>
+
+            <td colspan="1" class="social-icons"><br>
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" width="25" height="25"> -->
+                <img src="https://play-lh.googleusercontent.com/8n5zHCREwYskRGjkZWfg057SV-5hPCNEYuOwoadDI6h9dGIdQRVMwUAU35IthVc9oD8" alt="Twitter/X" width="25" height="25">
+                 <br>
+                <button><a href="https://www.x.com/srvsvd">Twitter / X</a></button>
+                <br><br>
+                <h2 id="res4"></h2>
+            </td>
+
+            <td colspan="1" class="social-icons"><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" width="25" height="25">
+                 <br>
+                <button><a href="https://www.youtube.com/@srvsvd">YouTube</a></button>
+                <br><br>
+                <h2 id="res4"></h2>
+            </td> 
+
+        </tr>
+
+        </table> <!--ENDING THE TABLE HERE INCLUDING THE SOCIAL MEDIA TAGS-->
+
+
+
+<!--START THE SCRIPT HERE-->
+<script>
+    function welcomeUser()
+     {
+        var name = document.getElementById("username").value; //using .value to fetch the value from the path="username" in the variable called 'name'
+        document.getElementById("welcomeMessage").innerHTML = "👋 Welcome back, " + name + "!"; //using .innerhtml to show the message in the path or print the value in the ID Path mentioned 'welcomemessage' ID
+    }
+
+
+    function addsvdjs() //function to addition
+    {
+        const num1 = parseFloat(prompt('ENTER FIRST NUMBER'));//Taking as Float Variable and storing the value to num1 (before taking any variable you have to mention Parse before like ParseInt, ParseFloat etc )
+        const num2 = parseFloat(prompt('ENTER SECOND NUMBER'));//Taking as Float Variable and storing the value to num2 (before taking any variable you have to mention Parse before like ParseInt, ParseFloat etc )
+
+        const sum = num1 + num2; //performing the addition
+
+        console.log(`${sum} is the addition`); //showing the message in console
+        alert("ADDITION OF YOUR DIGITS ARE: "+ sum + " ✅"); //giving the result in alert 
+        document.getElementById("res").innerHTML = num1+"+"+num2+" = "+sum+ " ✅"; //showing the result in the path id on html table where it it mentioned=id "res"
+        alert("THANKS FOR USING JS CALCULTOR BY SOURAV DEY (Visit : souravdey.in to know more.)\nSVDInc Corporation@2025"); //alert for thanks for using my code
+
+    }
+
+    function subsvdjs() //function to substraction
+    {
+        const num1=parseFloat(prompt('ENTER FIRST NUMBER'));
+        const num2=parseFloat(prompt('ENTER SECOND NUMBER'));
+
+        const subb = (num1-num2);
+
+        console.log(`${subb} is the substraction`);
+        alert("SUBSTRACTION OF YOUR DIGITS ARE: " + subb + " ✅");
+        document.getElementById("res2").innerHTML = num1+"-"+num2+" = "+subb+ " ✅";
+        alert("THANKS FOR USING JS CALCULTOR BY SOURAV DEY (Visit : souravdey.in to know more.)\nSVDInc Corporation@2025");
+
+
+    }
+
+    function mulsvdjs()  //function to multiplication
+    {
+        const num1 = parseFloat(prompt('ENTER FIRST NUMBER'));
+        const num2 = parseFloat(prompt('ENTER SECOND NUMBER'));
+
+        const muly = num1 * num2;
+
+        console.log(`${muly} is the multiplication`);
+        alert("MULTIPLICATION OF YOUR DIGITS ARE: " + muly + " ✅");
+        document.getElementById("res3").innerHTML = num1+"*"+num2+" = "+muly+ " ✅";
+        alert("THANKS FOR USING JS CALCULTOR BY SOURAV DEY (Visit : souravdey.in to know more.)\nSVDInc Corporation@2025");
+
+    }
+
+    function divsvdjs() //function to division
+    {
+        const num1=prompt('ENTER FIRST NUMBER');
+        const num2=prompt('ENTER SECOND NUMBER');
+
+        const divvy = (num1/num2);
+
+        console.log(`${divvy} is the division`); //console log in the console
+        alert("DIVISION OF YOUR DIGITS ARE: " + divvy + " ✅");
+        document.getElementById("res4").innerHTML = num1+"/"+num2+" = "+divvy+ " ✅";
+        alert("THANKS FOR USING JS CALCULTOR BY SOURAV DEY (Visit : souravdey.in to know more.)\nSVDInc Corporation@2025");
+    }
+
+
+    // FEW NOTES RELATED TO THE ABOVE JS:
+    //USE "VAR" type for alphabet
+    //use "const" for integer types
+    //use "parseINT/parsefloat for declaring the type of data to be stored inside the variable"
+    //Mother Language C logics and some statement like for,if,else,switch can be used in JS TO RUN A COMMAND
+    //user alert("MESSAGE") for popup message on screen
+    // format for = document.getElementById("pathname-where-it-is-to-be-shown").innerHTML(tag to show the value or print in the mentioned id)= "MESSAGE\PRINT VALUE"+any variable value to be print;
+    //console.log(`|| ${divvy}<--VARIABLE TO BE PRINT || MESSAGE AREA`); - Message to be print on console (viz. chrome/any browser terminal)
+    //BG IMAGES TAKEN FROM INTERNET SOURCE
+
+</script>
+
+<!--LAST HORIZONTAL COLOUMN OF WEBSITE-->
+</tbody></table></center>
+<p></p>
+<p align="center">
+<div></div>
+<p></p>
+<p>
+<hr>
+
+<p></p>
+<p align="center"><a href="https://www.souravdey.in/"><img border="1" 
+alt="SOURAV logo" src="https://img1.wsimg.com/isteam/ip/ced6a15e-debf-40da-a81d-67ef2b73b8ca/IMG_8177.JPG/:/cr=t:26.63%25,l:8.39%25,w:89.29%25,h:30.44%25/rs=w:1030,h:468,cg:true,m" width=75 height=15>
+<font size=1><br>
+</font></a><font size="1">VISIT THE OFFICIAL PAGE OF SOURAV DEY<br>
+<a href="https://www.souravdey.in/">WWW.SOURAVDEY.IN</a> 
+OR MAIL 
+souravdeysvd@gmail.com, 9 AM - 9 PM WEEKDAYS!</font>
+</p>
+<p>
+<hr>
+
+
+<p></p><font size="2">
+<p><a name="LETTERS"><a name="OWNER"><a name="STOCKCLASS">
+    <a name=LINKS></a></a></a></a>
+    If you have any comments about our WEB page, you can 
+write us at the address shown above.  However, due to 
+high number of demands, chat support might get delayed.
+<br>
+For more Codes & Contents : <a href="https://www.linktr.ee/svdcode">Click Here</a>
+<br>
+Try Out Our First AI Model Over Web: <a href="https://tr.ee/1RqDT0RfOS">SVDAlpha By Sourav</a>
+</p>
+</font>
+<p>
+<hr>
+
+
+<dl><p></p><p align="left"><font size="2"><a href="https://www.linktr.ee/svdone">SVDOne Portal</a> 
+<p align="left">Copyright &copy; 2025<b> SVDInc Corporation Systems Inc. (BY SRVSVD)</b><br>BETA VERSION 4.3.55. </font><font size="2"> 
+</dl>
+ 
+
+<font size="2" color="gray"> 
+     <p align="right"><b><i> Requires Internet Connection.<br>With latest Chrome / Safari browser<br>Images Source: Online.</i></b>
+    </font>
+
+    
+
+<p><a name="SOURAV"><a name="NEWSLETTER">
+<a name=SRVSVD></a></a></a></a></a></p>
+</font>
+
+<!--REGION SELECTION-->
+
+<hr>
+<font size="1">
+  <p>
+    <label for="region">Region: </label>
+    <select id="region">
+      <option value="english_in" selected>English IN</option>
+      <option value="english_us">English US</option>
+      <option value="english_uk">English UK</option>
+      <option value="hindi">Hindi</option>
+      <option value="bengali">Bengali</option>
+      <option value="telugu">Telugu</option>
+      <option value="tamil">Tamil</option>
+    </select>
+    <p>About Region: <a href="https://en.wikipedia.org/wiki/Region">Learn More</a></p>
+  </p>
+</font>
+
+<!--ENDING HERE-->
+</body>
+</html>
+<!--14th march 2025-->
+<!--BETA VERSION :4.3.55-->

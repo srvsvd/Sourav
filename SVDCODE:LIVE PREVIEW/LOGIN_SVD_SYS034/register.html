@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form id="registerForm">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" placeholder="New Username (Phone No./Mail ID)" id="regUser" required>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="New Password" id="regPass" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="index.html">Login</a></p>
+                <br><p><b>SVDInc Corporation 2025 - SYS034</b></p><br>
+                <p><b>Sourav Dey (SRVSVD)</b></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const newUser = document.getElementById("regUser").value;
+            const newPass = document.getElementById("regPass").value;
+
+            localStorage.setItem("regUsername", newUser);
+            localStorage.setItem("regPassword", newPass);
+
+            const blob = new Blob([`New User Registered\nUsername: ${newUser}\nPassword: ${newPass}`], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "registered_user.txt";
+            link.click();
+
+            alert("✅ Registration Successful! You can now login.");
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
